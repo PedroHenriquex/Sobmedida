@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+
+  postgres_container:
+      image: "postgres:latest"
+      container_name: "postgres_container"
+      environment:
+        POSTGRES_DB: "postgres"
+        POSTGRES_USER: "admin"
+        POSTGRES_PASSWORD: "admin"
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
+      restart: no
+
+volumes:
+  postgres_data:
